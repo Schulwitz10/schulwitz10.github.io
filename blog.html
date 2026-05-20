@@ -1,11 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Michael Schulwitz Jr.</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael's Blog</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', cursive;
+      background: #d9d9d9;
+      color: #333;
+    }
+
+    nav {
+      background: #2e2e2e;
+      padding: 18px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #A4E10A;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #45b649, #6fdc6f);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+    }
+
+    .blog-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      margin-bottom: 35px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-card img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .blog-card h2 {
+      color: #2e86c1;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      color: gray;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .blog-card p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 20px;
+      background: #A4E10A;
+      color: #222;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .read-more:hover {
+      background: #7bc400;
+      transform: scale(1.05);
+    }
+
+    .create-post {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .create-post a {
+      background: #2e86c1;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #2e2e2e;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 60px;
+    }
+
+  </style>
 </head>
+
 <body>
 
   <nav>
@@ -15,36 +150,54 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <header class="blog-header">
+  <section class="hero">
     <h1>📝 Michael’s Blog</h1>
-    <p>Updates, stories, book news, and fun ideas for young readers.</p>
-  </header>
+    <p>Behind the stories, imagination, and adventures.</p>
+  </section>
 
-  <main class="blog-container">
+  <div class="blog-container">
 
-    <article class="blog-card">
+    <div class="blog-card">
+      <img src="rocco-cover.jpg">
+
       <h2>How Rocco’s Spooky Adventure Came to Life</h2>
-      <p class="blog-date">Posted May 2026</p>
+
+      <div class="date">Posted May 2026</div>
 
       <p>
-        Rocco started as a fun idea about a brave little raccoon who gets lost in the woods.
+        Rocco started as a simple idea about courage and adventure.
+        I wanted to create a character kids could relate to — someone
+        who gets scared, but still finds bravery deep inside.
       </p>
 
-      <a href="#" class="blog-button">Read More</a>
-    </article>
+      <a href="#" class="read-more">Read More</a>
+    </div>
 
-    <article class="blog-card">
-      <h2>Why I Love Writing Children’s Books</h2>
-      <p class="blog-date">Posted May 2026</p>
+    <div class="blog-card">
+      <img src="cover-birdie.jpg">
+
+      <h2>Why I Love Writing Children's Books</h2>
+
+      <div class="date">Posted May 2026</div>
 
       <p>
-        Writing stories for kids lets me create adventures families can enjoy together.
+        Writing children’s books allows me to create magical moments
+        families can enjoy together. Stories help children imagine,
+        dream, laugh, and learn important lessons.
       </p>
 
-      <a href="#" class="blog-button">Read More</a>
-    </article>
+      <a href="#" class="read-more">Read More</a>
+    </div>
 
-  </main>
+    <div class="create-post">
+      <a href="#">✨ New Blog Posts Coming Soon</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Michael Schulwitz Jr. | Mighty Mike Tales
+  </footer>
 
 </body>
 </html>
