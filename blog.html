@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael's Blog</title>
+
+  <title>Mighty Mike Tales Blog</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -16,6 +22,8 @@
       color: #333;
     }
 
+    /* NAVIGATION */
+
     nav {
       background: #2e2e2e;
       padding: 18px;
@@ -23,6 +31,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 
     nav a {
@@ -31,117 +40,175 @@
       margin: 0 18px;
       font-size: 1.2rem;
       font-weight: bold;
+      transition: 0.3s ease;
     }
 
     nav a:hover {
       color: white;
     }
 
+    /* HERO BANNER */
+
     .hero {
-      background: linear-gradient(to right, #45b649, #6fdc6f);
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background:
+        linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.20)),
+        url('Blog Banner.png');
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      height: 500px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+
+      border-bottom: 5px solid #A4E10A;
     }
 
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.4rem;
-    }
+    /* BLOG CONTAINER */
 
     .blog-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 50px auto;
       padding: 20px;
     }
 
+    /* BLOG CARDS */
+
     .blog-card {
       background: white;
-      border-radius: 18px;
-      padding: 30px;
-      margin-bottom: 35px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      border-radius: 22px;
+      overflow: hidden;
+      margin-bottom: 45px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.14);
       transition: transform 0.3s ease;
     }
 
     .blog-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
     }
 
     .blog-card img {
       width: 100%;
-      max-height: 350px;
+      height: 340px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 20px;
+    }
+
+    .blog-content {
+      padding: 30px;
     }
 
     .blog-card h2 {
       color: #2e86c1;
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
     }
 
     .date {
       color: gray;
-      margin-bottom: 20px;
       font-size: 1rem;
+      margin-bottom: 18px;
     }
 
     .blog-card p {
       font-size: 1.2rem;
-      line-height: 1.7;
+      line-height: 1.8;
     }
+
+    /* BUTTONS */
 
     .read-more {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 22px;
       background: #A4E10A;
       color: #222;
-      padding: 12px 22px;
-      border-radius: 10px;
+      padding: 12px 24px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s ease;
     }
 
     .read-more:hover {
-      background: #7bc400;
+      background: #7dc400;
       transform: scale(1.05);
     }
 
-    .create-post {
-      text-align: center;
-      margin: 60px 0;
-    }
+    /* CATEGORY TAGS */
 
-    .create-post a {
+    .tag {
+      display: inline-block;
       background: #2e86c1;
       color: white;
-      padding: 14px 28px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 1.2rem;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
       font-weight: bold;
     }
+
+    /* FEATURED SECTION */
+
+    .featured-title {
+      text-align: center;
+      margin: 40px 0 50px;
+    }
+
+    .featured-title h1 {
+      font-size: 3rem;
+      color: #2e2e2e;
+      margin-bottom: 10px;
+    }
+
+    .featured-title p {
+      font-size: 1.3rem;
+      color: #555;
+    }
+
+    /* FOOTER */
 
     footer {
       background: #2e2e2e;
       color: white;
       text-align: center;
-      padding: 25px;
+      padding: 30px;
       margin-top: 60px;
+      font-size: 1rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      .hero {
+        height: 260px;
+      }
+
+      .blog-card h2 {
+        font-size: 1.7rem;
+      }
+
+      .featured-title h1 {
+        font-size: 2.2rem;
+      }
+
     }
 
   </style>
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
 
   <nav>
     <a href="index.html">Home</a>
@@ -150,54 +217,109 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <section class="hero">
-    <h1>📝 Michael’s Blog</h1>
-    <p>Behind the stories, imagination, and adventures.</p>
-  </section>
+  <!-- HERO IMAGE -->
+
+  <section class="hero"></section>
+
+  <!-- BLOG TITLE -->
+
+  <div class="featured-title">
+    <h1>📚 Mighty Mike Tales Blog</h1>
+    <p>
+      Short stories, adventures, lessons, activities,
+      and imagination for young hearts and curious minds.
+    </p>
+  </div>
+
+  <!-- BLOG CONTENT -->
 
   <div class="blog-container">
 
+    <!-- BLOG POST 1 -->
+
     <div class="blog-card">
+
       <img src="rocco-cover.jpg">
 
-      <h2>How Rocco’s Spooky Adventure Came to Life</h2>
+      <div class="blog-content">
 
-      <div class="date">Posted May 2026</div>
+        <div class="tag">Adventure</div>
 
-      <p>
-        Rocco started as a simple idea about courage and adventure.
-        I wanted to create a character kids could relate to — someone
-        who gets scared, but still finds bravery deep inside.
-      </p>
+        <h2>How Rocco’s Spooky Adventure Came to Life</h2>
 
-      <a href="#" class="read-more">Read More</a>
+        <div class="date">Posted May 2026</div>
+
+        <p>
+          Rocco started as a simple idea about courage and adventure.
+          I wanted to create a character kids could relate to —
+          someone who feels fear but still finds bravery deep inside.
+        </p>
+
+        <a href="#" class="read-more">Read Story</a>
+
+      </div>
+
     </div>
+
+    <!-- BLOG POST 2 -->
 
     <div class="blog-card">
+
       <img src="cover-birdie.jpg">
 
-      <h2>Why I Love Writing Children's Books</h2>
+      <div class="blog-content">
 
-      <div class="date">Posted May 2026</div>
+        <div class="tag">Books</div>
 
-      <p>
-        Writing children’s books allows me to create magical moments
-        families can enjoy together. Stories help children imagine,
-        dream, laugh, and learn important lessons.
-      </p>
+        <h2>Why I Love Writing Children’s Stories</h2>
 
-      <a href="#" class="read-more">Read More</a>
+        <div class="date">Posted May 2026</div>
+
+        <p>
+          Stories help children dream, laugh, imagine,
+          and explore new worlds. Writing books lets me create
+          adventures families can enjoy together.
+        </p>
+
+        <a href="#" class="read-more">Read Story</a>
+
+      </div>
+
     </div>
 
-    <div class="create-post">
-      <a href="#">✨ New Blog Posts Coming Soon</a>
+    <!-- BLOG POST 3 -->
+
+    <div class="blog-card">
+
+      <img src="rocco-coloring-page-preview.png">
+
+      <div class="blog-content">
+
+        <div class="tag">Activities</div>
+
+        <h2>Free Coloring Pages for Young Readers</h2>
+
+        <div class="date">Posted June 2026</div>
+
+        <p>
+          Download fun coloring pages featuring Rocco,
+          Birdie, and future Mighty Mike Tales characters.
+        </p>
+
+        <a href="coloring.html" class="read-more">View Printables</a>
+
+      </div>
+
     </div>
 
   </div>
+
+  <!-- FOOTER -->
 
   <footer>
     © 2026 Michael Schulwitz Jr. | Mighty Mike Tales
   </footer>
 
 </body>
+
 </html>
