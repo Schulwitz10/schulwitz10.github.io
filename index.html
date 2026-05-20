@@ -45,37 +45,30 @@
       color: #A4E10A;
       font-size: 1.2rem;
       transition: all 0.3s ease;
+      font-weight: bold;
     }
 
     nav ul li a:hover {
-      color: #76c724;
+      color: white;
       text-decoration: underline;
     }
 
     header {
-      background: #2e2e2e;
-      color: #A4E10A;
-      padding: 2rem;
-      text-align: center;
-      font-family: 'Comic Neue', cursive;
-      border-bottom: 3px solid #FF5733;
-      animation: fadeInDown 1s ease-out;
+      background-image: url('Main Banner.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #2e2e2e;
+      width: 100%;
+      height: 700px;
       margin-top: 60px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0.5rem 0;
-      color: #A4E10A;
-    }
-
-    header p {
-      font-size: 1.3rem;
-      color: #fff;
+      border-bottom: 4px solid #A4E10A;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
     .free-printables-button {
-      display: inline-block;
+      display: block;
+      width: fit-content;
       background-color: #A4E10A;
       color: white;
       padding: 1rem 2rem;
@@ -84,18 +77,14 @@
       text-decoration: none;
       font-size: 1.2rem;
       text-align: center;
-      margin: 20px auto;
+      margin: 25px auto;
       transition: background-color 0.3s ease, transform 0.3s ease;
+      font-weight: bold;
     }
 
     .free-printables-button:hover {
       background-color: #76c724;
       transform: scale(1.1);
-    }
-
-    @keyframes fadeInDown {
-      0% { transform: translateY(-50px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
     }
 
     section {
@@ -222,6 +211,27 @@
       border: 1px solid #aaa;
       font-size: 1rem;
     }
+
+    footer {
+      background: #2e2e2e;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul li {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      header {
+        height: 280px;
+        background-size: contain;
+        margin-top: 100px;
+      }
+    }
   </style>
 </head>
 
@@ -239,10 +249,7 @@
     </ul>
   </nav>
 
-  <header id="home">
-    <h1>📚 Michael Schulwitz Jr. – Children’s Author</h1>
-    <p>Adventurous. Heartfelt. Imaginative.</p>
-  </header>
+  <header id="home"></header>
 
   <a href="coloring.html" class="free-printables-button">🎨 Visit the Coloring Pages</a>
 
@@ -319,6 +326,10 @@
       <button type="submit" class="button">Subscribe</button>
     </form>
   </section>
+
+  <footer>
+    © 2026 Michael Schulwitz Jr. | Mighty Mike Tales
+  </footer>
 
 </body>
 </html>
