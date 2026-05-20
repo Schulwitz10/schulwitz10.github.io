@@ -14,41 +14,33 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Comic Neue', cursive;
       color: #222;
       background:
-        radial-gradient(circle at 15% 20%, rgba(255, 217, 90, 0.35), transparent 18%),
-        radial-gradient(circle at 85% 25%, rgba(46, 134, 193, 0.35), transparent 22%),
-        radial-gradient(circle at 50% 90%, rgba(164, 225, 10, 0.25), transparent 25%),
-        linear-gradient(135deg, #061329 0%, #102b54 45%, #2c1550 100%);
+        linear-gradient(rgba(8, 12, 28, 0.45), rgba(8, 12, 28, 0.65)),
+        url('Main Banner.png');
+      background-size: cover;
+      background-position: center top;
       background-attachment: fixed;
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,217,90,0.8) 1px, transparent 1px);
-      background-size: 90px 90px, 140px 140px;
-      opacity: 0.28;
-      z-index: -1;
-    }
-
     nav {
-      background: #2e2e2e;
+      background: rgba(25, 25, 25, 0.96);
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
       padding: 16px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+      border-bottom: 3px solid #A4E10A;
     }
 
     nav a {
@@ -70,75 +62,98 @@
       background-repeat: no-repeat;
       background-color: #2e2e2e;
       height: 700px;
-      margin-top: 56px;
+      margin-top: 58px;
       border-bottom: 5px solid #A4E10A;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.65);
     }
 
     .quick-buttons {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 18px;
-      padding: 35px 20px 10px;
+      gap: 20px;
+      padding: 35px 20px 5px;
     }
 
     .button {
-      background: linear-gradient(to bottom, #35a7ff, #1f618d);
+      background: linear-gradient(to bottom, #36aaff, #17659e);
       color: white;
-      padding: 14px 24px;
-      border-radius: 14px;
+      padding: 14px 26px;
+      border-radius: 16px;
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1rem;
       display: inline-block;
       transition: 0.25s ease;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+      box-shadow: 0 7px 16px rgba(0,0,0,0.35);
       border: 2px solid rgba(255,255,255,0.35);
     }
 
     .button:hover {
-      transform: translateY(-3px) scale(1.03);
-      background: linear-gradient(to bottom, #54b7ff, #2878b8);
+      transform: translateY(-4px) scale(1.04);
+      background: linear-gradient(to bottom, #5fc0ff, #227dbd);
     }
 
     .green {
-      background: linear-gradient(to bottom, #b9ff19, #78b900);
+      background: linear-gradient(to bottom, #c6ff2b, #79b800);
       color: #222;
     }
 
     .green:hover {
-      background: linear-gradient(to bottom, #ccff4a, #8ccc00);
+      background: linear-gradient(to bottom, #d9ff61, #91d000);
     }
 
     section {
       max-width: 1150px;
-      margin: 55px auto;
+      margin: 60px auto;
       padding: 20px;
     }
 
     .section-title {
       text-align: center;
-      font-size: 2.8rem;
+      font-size: 2.9rem;
       color: #ffd95a;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.65);
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.75);
       margin-bottom: 35px;
     }
 
-    .story-card {
-      background: rgba(255,245,220,0.96);
-      border-radius: 28px;
-      padding: 38px;
+    .storybook-card,
+    .book-card,
+    .quest-card,
+    .about-card {
+      background:
+        linear-gradient(rgba(255, 247, 224, 0.92), rgba(255, 235, 190, 0.92));
+      backdrop-filter: blur(5px);
+      border-radius: 30px;
       color: #222;
       box-shadow:
-        0 12px 30px rgba(0,0,0,0.42),
-        inset 0 0 25px rgba(255,215,120,0.35);
+        0 16px 35px rgba(0,0,0,0.55),
+        inset 0 0 30px rgba(255, 218, 120, 0.35);
       border: 5px solid #d9b45f;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .storybook-card::before,
+    .book-card::before,
+    .quest-card::before,
+    .about-card::before {
+      content: "✦";
+      position: absolute;
+      top: 14px;
+      right: 22px;
+      color: #d39b24;
+      font-size: 1.8rem;
+      opacity: 0.7;
+    }
+
+    .storybook-card {
+      padding: 42px;
       text-align: center;
     }
 
-    .story-card p {
-      font-size: 1.25rem;
+    .storybook-card p {
+      font-size: 1.28rem;
       line-height: 1.8;
       max-width: 900px;
       margin: auto;
@@ -147,105 +162,112 @@
     .book-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 35px;
+      gap: 36px;
     }
 
-    .book-card,
-    .quest-card,
-    .about-card {
-      background: rgba(255,245,220,0.96);
-      border-radius: 26px;
-      padding: 30px;
+    .book-card {
+      padding: 32px;
       text-align: center;
-      color: #222;
-      box-shadow:
-        0 12px 30px rgba(0,0,0,0.42),
-        inset 0 0 22px rgba(255,215,120,0.3);
-      border: 4px solid #d9b45f;
       transition: 0.3s ease;
     }
 
     .book-card:hover,
     .quest-card:hover {
-      transform: translateY(-7px);
+      transform: translateY(-8px);
     }
 
     .book-card img {
-      max-width: 260px;
-      border-radius: 16px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      max-width: 265px;
+      border-radius: 18px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+      border: 3px solid rgba(255,255,255,0.65);
     }
 
     .book-card h3,
     .quest-card h3 {
-      font-size: 1.7rem;
+      font-size: 1.75rem;
       color: #1f618d;
+      margin-bottom: 10px;
     }
 
     .book-card p,
     .quest-card p,
     .about-card p {
-      font-size: 1.15rem;
-      line-height: 1.6;
+      font-size: 1.16rem;
+      line-height: 1.65;
     }
 
     .quest-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 26px;
+    }
+
+    .quest-card {
+      padding: 30px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .about-card {
+      padding: 38px;
+      text-align: center;
     }
 
     .about-card img {
-      max-width: 230px;
-      border-radius: 18px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      max-width: 235px;
+      border-radius: 20px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+      border: 3px solid rgba(255,255,255,0.65);
     }
 
     .about-card p {
-      max-width: 880px;
+      max-width: 900px;
       margin: 25px auto;
     }
 
     .newsletter {
-      background: rgba(25,25,35,0.94);
+      background:
+        linear-gradient(rgba(22, 24, 39, 0.94), rgba(40, 25, 70, 0.94));
       color: white;
-      border-radius: 28px;
-      padding: 42px;
+      border-radius: 30px;
+      padding: 45px;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-      border: 4px solid #d9b45f;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.55);
+      border: 5px solid #d9b45f;
     }
 
     .newsletter h2 {
       color: #ffd95a;
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       margin-top: 0;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
 
     .newsletter p {
-      font-size: 1.15rem;
+      font-size: 1.18rem;
     }
 
     form {
       display: grid;
-      gap: 12px;
-      max-width: 520px;
-      margin: 25px auto;
+      gap: 14px;
+      max-width: 530px;
+      margin: 26px auto;
     }
 
     input {
-      padding: 14px;
-      border-radius: 10px;
-      border: none;
+      padding: 15px;
+      border-radius: 12px;
+      border: 2px solid #d9b45f;
       font-size: 1rem;
     }
 
     footer {
-      background: #2e2e2e;
+      background: rgba(25, 25, 25, 0.96);
       color: white;
       text-align: center;
-      padding: 30px;
-      margin-top: 60px;
+      padding: 32px;
+      margin-top: 70px;
       border-top: 4px solid #A4E10A;
     }
 
@@ -266,7 +288,15 @@
       }
 
       .section-title {
-        font-size: 2.1rem;
+        font-size: 2.15rem;
+      }
+
+      .storybook-card,
+      .book-card,
+      .quest-card,
+      .about-card,
+      .newsletter {
+        padding: 26px;
       }
     }
   </style>
@@ -293,7 +323,7 @@
   </div>
 
   <section>
-    <div class="story-card">
+    <div class="storybook-card">
       <h1 class="section-title">✨ Welcome to Mighty Mike Tales</h1>
       <p>
         Step into a world filled with courage, imagination, friendship, mystery, and adventure.
@@ -329,6 +359,7 @@
     <h2 class="section-title">🗺️ Choose Your Adventure</h2>
 
     <div class="quest-grid">
+
       <div class="quest-card">
         <h3>📖 Stories</h3>
         <p>Read updates, short stories, and behind-the-scenes author posts.</p>
@@ -346,6 +377,7 @@
         <p>Find Mighty Mike Tales bookmarks, stickers, and reader goodies.</p>
         <a href="https://www.etsy.com/shop/MightyMikeTales?ref=dashboard-header" class="button" target="_blank">Shop Etsy</a>
       </div>
+
     </div>
   </section>
 
@@ -358,6 +390,7 @@
         His books are inspired by his children’s curiosity, laughter, and imagination.
         He hopes to help kids explore bravery, kindness, creativity, and adventure through fun stories.
       </p>
+
       <a class="button" href="contact.html">📩 Contact Me</a>
       <a class="button" href="https://www.facebook.com/profile.php?id=61576012108925" target="_blank">📘 Follow on Facebook</a>
     </div>
@@ -379,4 +412,5 @@
   </footer>
 
 </body>
+
 </html>
