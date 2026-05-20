@@ -4,212 +4,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Michael Schulwitz Jr. | Children's Author</title>
+  <title>Michael Schulwitz Jr. | Mighty Mike Tales</title>
+
   <link rel="icon" type="image/png" href="Icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Comic Neue', cursive;
       margin: 0;
-      padding: 0;
-      background: #d0d0d0;
-      color: #333;
-      overflow-x: hidden;
+      font-family: 'Comic Neue', cursive;
+      background:
+        radial-gradient(circle at top left, rgba(164,225,10,0.25), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(46,134,193,0.25), transparent 30%),
+        #d0d0d0;
+      color: #222;
     }
 
     nav {
-      background-color: #2e2e2e;
+      background: #2e2e2e;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 1rem;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      padding: 16px;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    nav ul li {
-      display: inline;
-      margin: 0 16px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
+    nav a {
       color: #A4E10A;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 1.15rem;
       font-weight: bold;
     }
 
-    nav ul li a:hover {
+    nav a:hover {
       color: white;
-      text-decoration: underline;
     }
 
     header {
-      background-image: url('Main Banner 1.png');
+      background-image: url('Main Banner.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       background-color: #2e2e2e;
-      width: 100%;
       height: 700px;
-      margin-top: 60px;
-      border-bottom: 4px solid #A4E10A;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      margin-top: 56px;
+      border-bottom: 5px solid #A4E10A;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
     }
 
-    .free-printables-button {
-      display: block;
-      width: fit-content;
-      background-color: #A4E10A;
+    .quick-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 30px 20px;
+    }
+
+    .button {
+      background: #2e86c1;
       color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 10px;
+      padding: 13px 24px;
+      border-radius: 14px;
       text-decoration: none;
-      font-size: 1.2rem;
-      text-align: center;
-      margin: 25px auto;
-      transition: background-color 0.3s ease, transform 0.3s ease;
       font-weight: bold;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: 0.25s ease;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.18);
     }
 
-    .free-printables-button:hover {
-      background-color: #76c724;
-      transform: scale(1.1);
+    .button:hover {
+      transform: translateY(-3px) scale(1.03);
+      background: #1f618d;
+    }
+
+    .green {
+      background: #A4E10A;
+      color: #222;
+    }
+
+    .green:hover {
+      background: #7dc400;
     }
 
     section {
-      padding: 2rem;
+      max-width: 1150px;
+      margin: 55px auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.7rem;
+      color: #2e86c1;
+      margin-bottom: 30px;
+    }
+
+    .adventure-box {
+      background: white;
+      border-radius: 26px;
+      padding: 35px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.16);
+      border-top: 7px solid #A4E10A;
+    }
+
+    .adventure-box p {
+      font-size: 1.3rem;
+      line-height: 1.8;
       max-width: 900px;
       margin: auto;
     }
 
-    .book, .printables, .blog-preview {
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+    }
+
+    .book-card {
+      background: white;
+      border-radius: 26px;
+      padding: 28px;
       text-align: center;
-      margin-bottom: 3rem;
-      animation: popUp 1s ease-in;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.16);
+      transition: 0.25s ease;
     }
 
-    @keyframes popUp {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+    .book-card:hover {
+      transform: translateY(-7px);
     }
 
-    img.book-cover, img.avatar {
-      max-width: 250px;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
+    .book-card img {
+      max-width: 260px;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.22);
     }
 
-    img.book-cover:hover {
-      transform: scale(1.05);
-    }
-
-    h2 {
-      font-size: 1.8rem;
+    .book-card h3 {
+      font-size: 1.7rem;
       color: #2e86c1;
     }
 
-    .button {
-      background-color: #2e86c1;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+    .book-card p {
+      font-size: 1.15rem;
+      line-height: 1.6;
     }
 
-    .button:hover {
-      background-color: #1f618d;
-      transform: scale(1.05);
+    .quest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .quest-card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border-bottom: 6px solid #A4E10A;
+    }
+
+    .quest-card h3 {
+      color: #2e86c1;
+      font-size: 1.5rem;
     }
 
     .about {
-      background-color: #ffffffcc;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      animation: fadeInUp 1s ease-in-out;
-    }
-
-    @keyframes fadeInUp {
-      0% { transform: translateY(50px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    .facebook-button {
-      display: block;
-      width: fit-content;
-      margin: 20px auto;
-      background-color: #4267B2;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .facebook-button:hover {
-      background-color: #365899;
-      transform: scale(1.05);
-    }
-
-    .blog-preview {
-      background-color: #ffffffcc;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-    }
-
-    .blog-card {
       background: white;
-      padding: 1.2rem;
-      margin: 1rem auto;
-      border-radius: 10px;
-      max-width: 700px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      border-radius: 28px;
+      padding: 35px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.16);
     }
 
-    .blog-card h3 {
-      color: #2e86c1;
-      margin-bottom: 0.4rem;
+    .about img {
+      max-width: 240px;
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
     }
 
-    .blog-date {
-      color: #777;
-      font-size: 0.95rem;
+    .about p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 25px auto;
+    }
+
+    .newsletter {
+      background: #2e2e2e;
+      color: white;
+      border-radius: 28px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+    }
+
+    .newsletter h2 {
+      color: #A4E10A;
+      font-size: 2.4rem;
     }
 
     form {
       display: grid;
-      gap: 10px;
-      max-width: 500px;
-      margin: auto;
+      gap: 12px;
+      max-width: 520px;
+      margin: 25px auto;
     }
 
     input {
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #aaa;
+      padding: 13px;
+      border-radius: 10px;
+      border: none;
       font-size: 1rem;
     }
 
@@ -217,20 +231,28 @@
       background: #2e2e2e;
       color: white;
       text-align: center;
-      padding: 25px;
-      margin-top: 40px;
+      padding: 30px;
+      margin-top: 60px;
     }
 
-    @media (max-width: 768px) {
-      nav ul li {
+    @media (max-width: 850px) {
+      nav a {
         display: inline-block;
-        margin: 8px;
+        margin: 7px;
       }
 
       header {
-        height: 280px;
-        background-size: contain;
-        margin-top: 100px;
+        height: 300px;
+        margin-top: 95px;
+      }
+
+      .book-grid,
+      .quest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 2.1rem;
       }
     }
   </style>
@@ -239,92 +261,100 @@
 <body>
 
   <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#books">Books</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="coloring.html">Printables</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#etsy">Etsy Store</a></li>
-    </ul>
+    <a href="#home">Home</a>
+    <a href="#books">Books</a>
+    <a href="#about">About Me</a>
+    <a href="coloring.html">Printables</a>
+    <a href="blog.html">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#etsy">Etsy Store</a>
   </nav>
 
   <header id="home"></header>
 
-  <a href="coloring.html" class="free-printables-button">🎨 Visit the Coloring Pages</a>
+  <div class="quick-buttons">
+    <a href="#books" class="button green">📚 Explore My Books</a>
+    <a href="coloring.html" class="button">🎨 Free Printables</a>
+    <a href="blog.html" class="button">📝 Read the Blog</a>
+  </div>
+
+  <section>
+    <div class="adventure-box">
+      <h1 class="section-title">✨ Welcome to Mighty Mike Tales</h1>
+      <p>
+        Step into a world filled with courage, imagination, friendship, mystery, and adventure.
+        Mighty Mike Tales is where young readers can discover fun stories, colorful characters,
+        free activities, and books made to spark big dreams.
+      </p>
+    </div>
+  </section>
 
   <section id="books">
-    <h2>📘 My Books</h2>
+    <h2 class="section-title">📘 Featured Books</h2>
 
-    <div class="book">
-      <img class="book-cover" src="rocco-cover.jpg" alt="Rocco's Spooky Adventure Cover">
-      <h3>Rocco’s Spooky Adventure</h3>
-      <p>A brave little raccoon gets lost in the woods and discovers that fear can lead to friendship and courage.</p>
-      <a href="https://www.amazon.com/dp/B0D7SN7BTL" class="button" target="_blank">Buy on Amazon</a>
+    <div class="book-grid">
+
+      <div class="book-card">
+        <img src="rocco-cover.jpg" alt="Rocco's Spooky Adventure Cover">
+        <h3>Rocco’s Spooky Adventure</h3>
+        <p>A brave little raccoon gets lost in the woods and discovers that fear can lead to friendship and courage.</p>
+        <a href="https://www.amazon.com/dp/B0D7SN7BTL" class="button" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="book-card">
+        <img src="cover-birdie.jpg" alt="Birdie Birdie in the Sky Cover">
+        <h3>Birdie Birdie in the Sky</h3>
+        <p>A silly, fun rhyming story featuring a joyful girl and a plump yellow bird on a whimsical sky-high adventure.</p>
+        <a href="https://www.barnesandnoble.com/w/birdie-birdie-in-the-sky-michael-dwight-schulwitz/1147297250?ean=9798349259777" class="button" target="_blank">Buy on Barnes & Noble</a>
+      </div>
+
     </div>
+  </section>
 
-    <div class="book">
-      <img class="book-cover" src="cover-birdie.jpg" alt="Birdie Birdie in the Sky Cover">
-      <h3>Birdie Birdie in the Sky</h3>
-      <p>A silly, fun rhyming story featuring a joyful girl and a plump yellow bird on a whimsical sky-high adventure!</p>
-      <a href="https://www.barnesandnoble.com/w/birdie-birdie-in-the-sky-michael-dwight-schulwitz/1147297250?ean=9798349259777" class="button" target="_blank">Buy on Barnes & Noble</a>
+  <section>
+    <h2 class="section-title">🗺️ Choose Your Adventure</h2>
+
+    <div class="quest-grid">
+      <div class="quest-card">
+        <h3>📖 Stories</h3>
+        <p>Read updates, short stories, and behind-the-scenes author posts.</p>
+        <a href="blog.html" class="button">Visit Blog</a>
+      </div>
+
+      <div class="quest-card">
+        <h3>🎨 Activities</h3>
+        <p>Download coloring pages and fun printables for young readers.</p>
+        <a href="coloring.html" class="button">Get Printables</a>
+      </div>
+
+      <div class="quest-card">
+        <h3>🛍️ Shop</h3>
+        <p>Find Mighty Mike Tales bookmarks, stickers, and reader goodies.</p>
+        <a href="https://www.etsy.com/shop/MightyMikeTales?ref=dashboard-header" class="button" target="_blank">Shop Etsy</a>
+      </div>
     </div>
   </section>
 
   <section id="about" class="about">
-    <h2>👨‍💻 Meet the Author</h2>
-    <img class="avatar" src="michael-avatar.png" alt="Cartoon avatar of Michael Schulwitz Jr.">
-    <p>Michael Schulwitz Jr. is a passionate children’s storyteller and dad of four. His books are inspired by his own children’s curiosity and laughter. He hopes to help kids explore bravery, kindness, and creativity through fun and colorful adventures.</p>
+    <h2 class="section-title">👨‍💻 Meet the Author</h2>
+    <img src="michael-avatar.png" alt="Cartoon avatar of Michael Schulwitz Jr.">
+    <p>
+      Michael Schulwitz Jr. is a passionate children’s storyteller and dad of four.
+      His books are inspired by his children’s curiosity, laughter, and imagination.
+      He hopes to help kids explore bravery, kindness, creativity, and adventure through fun stories.
+    </p>
     <a class="button" href="contact.html">📩 Contact Me</a>
+    <a class="button" href="https://www.facebook.com/profile.php?id=61576012108925" target="_blank">📘 Follow on Facebook</a>
   </section>
 
-  <a href="https://www.facebook.com/profile.php?id=61576012108925" target="_blank" class="facebook-button">
-    📘 Follow Me on Facebook
-  </a>
-
-  <section id="blog" class="blog-preview">
-    <h2>📝 Latest from the Blog</h2>
-
-    <div class="blog-card">
-      <h3>How Rocco’s Spooky Adventure Came to Life</h3>
-      <p class="blog-date">Posted May 2026</p>
-      <p>A behind-the-scenes look at how Rocco became a brave little raccoon with a big adventure.</p>
-    </div>
-
-    <div class="blog-card">
-      <h3>Why I Love Writing Children’s Books</h3>
-      <p class="blog-date">Posted May 2026</p>
-      <p>Writing stories for kids lets me create fun, courage-filled adventures for families to enjoy together.</p>
-    </div>
-
-    <a class="button" href="blog.html">Read the Blog</a>
-  </section>
-
-  <section id="printables" class="printables">
-    <h2>🖍️ Free Printables</h2>
-    <p>Click below to explore all Rocco and Birdie coloring fun!</p>
-    <a class="button" href="coloring.html">🎨 Visit the Coloring Pages</a>
-  </section>
-
-  <section id="etsy" class="printables">
-    <h2>🛍️ Visit My Etsy Store</h2>
-    <p>Find fun bookmarks, stickers, pencil cases, and more — perfect for young readers!</p>
-    <a class="button" href="https://www.etsy.com/shop/MightyMikeTales?ref=dashboard-header" target="_blank">🛒 Shop on Etsy</a>
-  </section>
-
-  <section id="contact">
-    <h2>Subscribe to Our Newsletter</h2>
-    <p>Sign up to receive updates about new books and more fun content!</p>
+  <section id="contact" class="newsletter">
+    <h2>Join the Adventure Club</h2>
+    <p>Sign up for updates about new books, free printables, and Mighty Mike Tales news.</p>
 
     <form action="https://formspree.io/f/xdkeproy" method="POST">
-      <label for="name">Your Name:</label>
-      <input type="text" name="name" id="name" required>
-
-      <label for="email">Your Email:</label>
-      <input type="email" name="email" id="email" required>
-
-      <button type="submit" class="button">Subscribe</button>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <button type="submit" class="button green">Subscribe</button>
     </form>
   </section>
 
