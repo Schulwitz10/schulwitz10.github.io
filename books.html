@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Books | Mighty Mike Tales</title>
+
   <link rel="icon" type="image/png" href="Icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
@@ -11,45 +13,89 @@
     body {
       margin: 0;
       font-family: 'Comic Neue', cursive;
+      color: white;
       background:
-        linear-gradient(rgba(8, 12, 28, 0.55), rgba(8, 12, 28, 0.75)),
-        url('Forest Background.png');
+        linear-gradient(rgba(5, 8, 25, 0.55), rgba(5, 8, 25, 0.75)),
+        url('Book Background.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      color: #222;
     }
 
     nav {
-      background: #2e2e2e;
-      padding: 16px;
-      text-align: center;
-      border-bottom: 3px solid #A4E10A;
+      background: rgba(20, 20, 30, 0.95);
+      padding: 16px 10px;
+      border-bottom: 4px solid #A4E10A;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
     }
 
-    nav a {
-      color: #A4E10A;
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, #A4E10A, #5fbf00);
+      color: #102000;
       text-decoration: none;
-      margin: 0 16px;
-      font-size: 1.15rem;
       font-weight: bold;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+      transition: 0.2s;
     }
 
-    nav a:hover {
-      color: white;
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #ffd95a, #ff9f1c);
+      color: #1b1b1b;
     }
 
-    .page-title {
+    .banner {
+      max-width: 1200px;
+      margin: 35px auto 20px;
+      padding: 0 18px;
+    }
+
+    .banner img {
+      width: 100%;
+      border-radius: 28px;
+      border: 5px solid #A4E10A;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.65);
+      display: block;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 30px auto;
       text-align: center;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 25px;
+      border-radius: 24px;
+      border: 3px solid #ffd95a;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+    }
+
+    .intro h1 {
       color: #ffd95a;
-      font-size: 3rem;
-      margin: 50px 20px;
+      font-size: 2.6rem;
+      margin: 0 0 10px;
       text-shadow: 3px 3px 8px black;
     }
 
+    .intro p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
     .books-grid {
-      max-width: 1100px;
-      margin: auto;
+      max-width: 1150px;
+      margin: 30px auto;
       padding: 20px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -57,56 +103,80 @@
     }
 
     .book-card {
-      background: rgba(255, 246, 220, 0.95);
-      border: 5px solid #d9b45f;
-      border-radius: 28px;
-      padding: 30px;
+      background: rgba(255, 248, 222, 0.96);
+      color: #222;
+      border: 5px solid #ffd95a;
+      border-radius: 30px;
+      padding: 28px;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.55);
+      transition: 0.25s;
+    }
+
+    .book-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.7);
     }
 
     .book-card img {
+      width: 100%;
       max-width: 280px;
-      border-radius: 16px;
+      border-radius: 18px;
+      border: 4px solid white;
       box-shadow: 0 8px 20px rgba(0,0,0,0.35);
     }
 
     .book-card h2 {
       color: #1f618d;
       font-size: 2rem;
+      margin-bottom: 10px;
     }
 
     .book-card p {
       font-size: 1.15rem;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     .button {
       display: inline-block;
       margin: 8px;
       padding: 13px 22px;
-      background: #2e86c1;
+      background: linear-gradient(135deg, #2e86c1, #1f618d);
       color: white;
-      border-radius: 12px;
+      border-radius: 999px;
       text-decoration: none;
       font-weight: bold;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+      transition: 0.2s;
     }
 
     .button:hover {
-      background: #1f618d;
+      transform: scale(1.06);
+      background: linear-gradient(135deg, #A4E10A, #5fbf00);
+      color: #102000;
     }
 
     footer {
-      background: #2e2e2e;
+      background: rgba(20, 20, 30, 0.95);
       color: white;
       text-align: center;
       padding: 25px;
-      margin-top: 60px;
+      margin-top: 50px;
+      border-top: 4px solid #A4E10A;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
       .books-grid {
         grid-template-columns: 1fr;
+      }
+
+      .intro h1 {
+        font-size: 2rem;
+      }
+
+      .nav-btn {
+        font-size: 0.95rem;
+        padding: 10px 13px;
       }
     }
   </style>
@@ -114,48 +184,39 @@
 
 <body>
 
-  <!-- NAV -->
-
   <nav>
-
     <div class="nav-container">
-
-      <a href="#home" class="nav-btn">🏠 Home</a>
-
+      <a href="index.html" class="nav-btn">🏠 Home</a>
       <a href="books.html" class="nav-btn">📚 Books</a>
-
-      <a href="#about" class="nav-btn">👨‍💻 About Me</a>
-
+      <a href="index.html#about" class="nav-btn">👨‍💻 About Me</a>
       <a href="stories.html" class="nav-btn">✨ Stories</a>
-
       <a href="coloring.html" class="nav-btn">🎨 Printables</a>
-
       <a href="blog.html" class="nav-btn">📝 Blog</a>
-
       <a href="contact.html" class="nav-btn">📩 Contact</a>
-
-      <a href="https://www.etsy.com/shop/MightyMikeTales?ref=dashboard-header"
-         target="_blank"
-         class="nav-btn">
-
-         🛍️ Etsy Store
-
-      </a>
-
+      <a href="https://www.etsy.com/shop/MightyMikeTales?ref=dashboard-header" target="_blank" class="nav-btn">🛍️ Etsy Store</a>
     </div>
-
   </nav>
 
-  <!-- MAIN BANNER -->
+  <section class="banner">
+    <img src="Book banner.png" alt="Mighty Mike's Book Banner">
+  </section>
 
-  <h1 class="page-title">📚 Explore My Books</h1>
+  <section class="intro">
+    <h1>Published Books</h1>
+    <p>
+      Welcome to Mighty Mike’s book collection! Here you can explore my published children’s books,
+      full of imagination, adventure, courage, and fun.
+    </p>
+  </section>
 
-  <div class="books-grid">
+  <main class="books-grid">
 
     <div class="book-card">
       <img src="rocco-cover.jpg" alt="Rocco's Spooky Adventure">
       <h2>Rocco’s Spooky Adventure</h2>
-      <p>A brave little raccoon gets lost in the woods and discovers that fear can lead to friendship and courage.</p>
+      <p>
+        A brave little raccoon gets lost in the woods and discovers that fear can lead to friendship and courage.
+      </p>
       <a href="https://www.amazon.com/dp/B0D7SN7BTL" class="button" target="_blank">Buy on Amazon</a>
       <a href="#" class="button">Read Free Preview</a>
     </div>
@@ -163,12 +224,14 @@
     <div class="book-card">
       <img src="cover-birdie.jpg" alt="Birdie Birdie in the Sky">
       <h2>Birdie Birdie in the Sky</h2>
-      <p>A silly, fun rhyming story featuring a joyful girl and a plump yellow bird on a whimsical sky-high adventure.</p>
+      <p>
+        A silly, fun rhyming story featuring a joyful girl and a plump yellow bird on a whimsical sky-high adventure.
+      </p>
       <a href="https://www.barnesandnoble.com/w/birdie-birdie-in-the-sky-michael-dwight-schulwitz/1147297250?ean=9798349259777" class="button" target="_blank">Buy on Barnes & Noble</a>
       <a href="#" class="button">Read Free Preview</a>
     </div>
 
-  </div>
+  </main>
 
   <footer>
     © 2026 Michael Schulwitz Jr. | Mighty Mike Tales
