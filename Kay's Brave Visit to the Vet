@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kay's Brave Visit to the Vet</title>
+
+  <link rel="icon" type="image/png" href="Icon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+
+      font-family:'Comic Neue', cursive;
+
+      color:white;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.45)),
+      url('Kay Background.png');
+
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+
+    /* NAVIGATION */
+
+    nav{
+      background:rgba(18,18,25,0.96);
+
+      position:fixed;
+      top:0;
+      width:100%;
+
+      z-index:1000;
+
+      padding:14px 10px;
+
+      border-bottom:3px solid #A4E10A;
+
+      box-shadow:
+      0 5px 18px rgba(0,0,0,0.45);
+
+      backdrop-filter:blur(8px);
+    }
+
+    .nav-container{
+      display:flex;
+
+      justify-content:center;
+
+      align-items:center;
+
+      flex-wrap:wrap;
+
+      gap:14px;
+    }
+
+    .nav-btn{
+
+      background:
+      linear-gradient(to bottom,#d6ff5f,#93d000);
+
+      color:#1a1a1a;
+
+      text-decoration:none;
+
+      padding:12px 22px;
+
+      border-radius:18px;
+
+      font-size:1rem;
+
+      font-weight:bold;
+
+      box-shadow:
+      0 5px 14px rgba(0,0,0,0.4),
+      inset 0 2px 4px rgba(255,255,255,0.55);
+
+      transition:0.25s ease;
+    }
+
+    .nav-btn:hover{
+
+      transform:
+      translateY(-4px)
+      scale(1.06);
+
+      background:
+      linear-gradient(to bottom,#ebff95,#abed00);
+
+      box-shadow:
+      0 8px 18px rgba(164,225,10,0.45),
+      0 0 20px rgba(164,225,10,0.35);
+
+      color:#111;
+    }
+
+    /* STORY AREA */
+
+    .story-wrapper{
+
+      max-width:950px;
+
+      margin:140px auto 80px;
+
+      padding:20px;
+    }
+
+    .story-box{
+
+      background:
+      linear-gradient(
+      rgba(255,247,224,0.95),
+      rgba(255,235,190,0.95));
+
+      border-radius:35px;
+
+      padding:45px;
+
+      border:5px solid #d9b45f;
+
+      box-shadow:
+      0 16px 35px rgba(0,0,0,0.55),
+      inset 0 0 30px rgba(255,218,120,0.35);
+
+      color:#222;
+
+      position:relative;
+    }
+
+    .story-box::before{
+
+      content:"🐶";
+
+      position:absolute;
+
+      top:18px;
+      right:25px;
+
+      font-size:2rem;
+    }
+
+    .story-image{
+
+      width:100%;
+
+      border-radius:25px;
+
+      margin-bottom:35px;
+
+      box-shadow:
+      0 10px 25px rgba(0,0,0,0.35);
+    }
+
+    .story-title{
+
+      text-align:center;
+
+      font-size:3.5rem;
+
+      color:#1f618d;
+
+      margin-bottom:10px;
+    }
+
+    .story-sub{
+
+      text-align:center;
+
+      font-size:1.25rem;
+
+      color:#666;
+
+      margin-bottom:40px;
+    }
+
+    .story-text{
+
+      font-size:1.45rem;
+
+      line-height:2;
+    }
+
+    .story-text p{
+      margin-bottom:28px;
+    }
+
+    .highlight{
+
+      text-align:center;
+
+      font-size:1.9rem;
+
+      color:#2e86c1;
+
+      font-weight:bold;
+    }
+
+    .button-row{
+
+      text-align:center;
+
+      margin-top:45px;
+    }
+
+    .button{
+
+      display:inline-block;
+
+      margin:10px;
+
+      background:
+      linear-gradient(to bottom,#36aaff,#17659e);
+
+      color:white;
+
+      padding:14px 26px;
+
+      border-radius:16px;
+
+      text-decoration:none;
+
+      font-weight:bold;
+
+      font-size:1.05rem;
+
+      transition:0.25s ease;
+
+      box-shadow:
+      0 7px 16px rgba(0,0,0,0.35);
+    }
+
+    .button:hover{
+
+      transform:
+      translateY(-4px)
+      scale(1.04);
+
+      background:
+      linear-gradient(to bottom,#5fc0ff,#227dbd);
+    }
+
+    footer{
+
+      background:rgba(25,25,25,0.96);
+
+      color:white;
+
+      text-align:center;
+
+      padding:30px;
+
+      border-top:4px solid #A4E10A;
+    }
+
+    /* MOBILE */
+
+    @media (max-width:850px){
+
+      .story-wrapper{
+        margin-top:170px;
+      }
+
+      .story-title{
+        font-size:2.3rem;
+      }
+
+      .story-text{
+        font-size:1.2rem;
+        line-height:1.8;
+      }
+
+      .story-box{
+        padding:25px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <a href="index.html" class="nav-btn">🏠 Home</a>
+
+      <a href="books.html" class="nav-btn">📚 Books</a>
+
+      <a href="stories.html" class="nav-btn">✨ Stories</a>
+
+      <a href="coloring.html" class="nav-btn">🎨 Printables</a>
+
+      <a href="blog.html" class="nav-btn">📝 Blog</a>
+
+    </div>
+
+  </nav>
+
+  <!-- STORY -->
+
+  <div class="story-wrapper">
+
+    <div class="story-box">
+
+      <img src="Kay.png" class="story-image">
+
+      <h1 class="story-title">
+        Kay's Brave Visit to the Vet
+      </h1>
+
+      <div class="story-sub">
+        A heartwarming puppy adventure about courage
+      </div>
+
+      <div class="story-text">
+
+        <p>
+          Kay the puppy loved playing fetch,
+          chewing squeaky toys,
+          and cuddling with her family.
+        </p>
+
+        <p>
+          But there was one thing Kay did NOT love...
+        </p>
+
+        <p class="highlight">
+          The vet.
+        </p>
+
+        <p>
+          Every time Kay heard the car keys jingle,
+          her floppy ears drooped.
+        </p>
+
+        <p>
+          “Oh no,” she thought.
+          “Not the vet!”
+        </p>
+
+        <p>
+          One bright morning,
+          Kay’s owner gently clipped on her leash.
+        </p>
+
+        <p>
+          “Time for your checkup, Kay!”
+        </p>
+
+        <p>
+          Kay slowly walked to the car,
+          nervous butterflies bouncing in her puppy tummy.
+        </p>
+
+        <p>
+          When they arrived,
+          Kay peeked through the door.
+        </p>
+
+        <p>
+          The vet office wasn’t scary at all.
+        </p>
+
+        <p>
+          There were colorful walls,
+          smiling workers,
+          and even a basket full of treats.
+        </p>
+
+        <p class="highlight">
+          Sniff... Sniff...
+        </p>
+
+        <p>
+          Kay smelled peanut butter treats nearby.
+        </p>
+
+        <p>
+          A friendly golden retriever wagged his tail and said,
+          “The treats here are amazing!”
+        </p>
+
+        <p>
+          Kay’s tail gave a tiny wag.
+        </p>
+
+        <p>
+          Soon,
+          the veterinarian gently listened to Kay’s heartbeat,
+          checked her paws,
+          and gave her a tasty treat.
+        </p>
+
+        <p>
+          “You are one brave puppy,”
+          the vet said with a smile.
+        </p>
+
+        <p>
+          Kay felt proud.
+        </p>
+
+        <p>
+          Maybe the vet wasn’t scary after all.
+        </p>
+
+        <p>
+          Before leaving,
+          Kay even gave the vet a happy lick on the hand.
+        </p>
+
+        <p class="highlight">
+          Tail wag. Tail wag.
+        </p>
+
+        <p>
+          On the ride home,
+          Kay stuck her head out the window,
+          feeling brave and happy.
+        </p>
+
+        <p>
+          “I can do hard things,”
+          she thought proudly.
+        </p>
+
+      </div>
+
+      <div class="button-row">
+
+        <a href="stories.html" class="button">
+          ← Back to Stories
+        </a>
+
+        <a href="index.html" class="button">
+          🏠 Home
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+
+    © 2026 Mighty Mike Tales
+
+  </footer>
+
+</body>
+
+</html>
