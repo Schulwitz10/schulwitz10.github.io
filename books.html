@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books | Mighty Mike Tales</title>
+  <link rel="icon" type="image/png" href="Icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', cursive;
+      background:
+        linear-gradient(rgba(8, 12, 28, 0.55), rgba(8, 12, 28, 0.75)),
+        url('Forest Background.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #222;
+    }
+
+    nav {
+      background: #2e2e2e;
+      padding: 16px;
+      text-align: center;
+      border-bottom: 3px solid #A4E10A;
+    }
+
+    nav a {
+      color: #A4E10A;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 1.15rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .page-title {
+      text-align: center;
+      color: #ffd95a;
+      font-size: 3rem;
+      margin: 50px 20px;
+      text-shadow: 3px 3px 8px black;
+    }
+
+    .books-grid {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+    }
+
+    .book-card {
+      background: rgba(255, 246, 220, 0.95);
+      border: 5px solid #d9b45f;
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    }
+
+    .book-card img {
+      max-width: 280px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+
+    .book-card h2 {
+      color: #1f618d;
+      font-size: 2rem;
+    }
+
+    .book-card p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 8px;
+      padding: 13px 22px;
+      background: #2e86c1;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #1f618d;
+    }
+
+    footer {
+      background: #2e2e2e;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 800px) {
+      .books-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="books.html">Books</a>
+    <a href="index.html#about">About Me</a>
+    <a href="coloring.html">Printables</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.etsy.com/shop/MightyMikeTales?ref=dashboard-header" target="_blank">Etsy Store</a>
+  </nav>
+
+  <h1 class="page-title">📚 Explore My Books</h1>
+
+  <div class="books-grid">
+
+    <div class="book-card">
+      <img src="rocco-cover.jpg" alt="Rocco's Spooky Adventure">
+      <h2>Rocco’s Spooky Adventure</h2>
+      <p>A brave little raccoon gets lost in the woods and discovers that fear can lead to friendship and courage.</p>
+      <a href="https://www.amazon.com/dp/B0D7SN7BTL" class="button" target="_blank">Buy on Amazon</a>
+      <a href="#" class="button">Read Free Preview</a>
+    </div>
+
+    <div class="book-card">
+      <img src="cover-birdie.jpg" alt="Birdie Birdie in the Sky">
+      <h2>Birdie Birdie in the Sky</h2>
+      <p>A silly, fun rhyming story featuring a joyful girl and a plump yellow bird on a whimsical sky-high adventure.</p>
+      <a href="https://www.barnesandnoble.com/w/birdie-birdie-in-the-sky-michael-dwight-schulwitz/1147297250?ean=9798349259777" class="button" target="_blank">Buy on Barnes & Noble</a>
+      <a href="#" class="button">Read Free Preview</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Michael Schulwitz Jr. | Mighty Mike Tales
+  </footer>
+
+</body>
+</html>
