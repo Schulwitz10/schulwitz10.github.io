@@ -24,21 +24,32 @@
 
     /* NAVIGATION */
 
-     nav a {
-      color: #A4E10A;
-      text-decoration: none;
-      margin: 0 16px;
-      font-size: 1.15rem;
-      font-weight: bold;
-    }
+   nav{
+    width:100%;
+    background:#0b0b0b;
+    border-bottom:2px solid #9dff00;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
 
-    nav a:hover {
-      color: white;
-    }
+nav a{
+    color:#9dff00;
+    text-decoration:none;
+    font-size:28px;
+    font-weight:bold;
+    transition:.3s;
+}
 
-    nav a:hover {
-      color: white;
-    }
+nav a:hover{
+    color:white;
+    text-shadow:0 0 10px #9dff00;
+}
 
     /* HERO BANNER */
 
