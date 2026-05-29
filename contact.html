@@ -1,112 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Misc Cleaning LLC</title>
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #5f9ea0;
-            color: white;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        h1 {
-            font-size: 36px;
-        }
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-        p {
-            font-size: 18px;
-        }
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f4f7f9;
+      color:#222;
+    }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
+    header{
+      background:#0d3b66;
+      color:white;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-        label {
-            font-size: 18px;
-            margin: 10px 0;
-        }
+    .logo{
+      font-size:32px;
+      font-weight:700;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 10px;
-            width: 250px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+    .home-btn{
+      background:#84dcc6;
+      color:#0d3b66;
+      padding:12px 24px;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:700;
+    }
 
-        textarea {
-            resize: vertical;
-            height: 100px;
-        }
+    .contact-hero{
+      background:linear-gradient(rgba(13,59,102,.85),rgba(13,59,102,.85)),
+      url('Misc Cleaning Background.png');
+      background-size:cover;
+      background-position:center;
+      color:white;
+      text-align:center;
+      padding:80px 8%;
+    }
 
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #5f9ea0;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .contact-hero h1{
+      font-size:48px;
+      margin-bottom:15px;
+    }
 
-        button:hover {
-            background-color: #4c8b7a;
-        }
+    .contact-hero p{
+      font-size:20px;
+    }
 
-        .success-message {
-            text-align: center;
-            font-size: 18px;
-            color: green;
-            margin-top: 20px;
-        }
+    .contact-section{
+      padding:70px 8%;
+      display:flex;
+      justify-content:center;
+    }
 
-        .error-message {
-            text-align: center;
-            font-size: 18px;
-            color: red;
-            margin-top: 20px;
-        }
-    </style>
+    .contact-box{
+      background:white;
+      width:100%;
+      max-width:750px;
+      padding:45px;
+      border-radius:20px;
+      box-shadow:0 8px 30px rgba(0,0,0,.12);
+    }
+
+    form{
+      display:grid;
+      gap:18px;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:15px;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-family:'Poppins',sans-serif;
+      font-size:16px;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    button{
+      background:#0d3b66;
+      color:white;
+      border:none;
+      padding:16px;
+      border-radius:40px;
+      font-size:17px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    button:hover{
+      background:#84dcc6;
+      color:#0d3b66;
+    }
+
+    .info{
+      text-align:center;
+      margin-top:30px;
+      color:#555;
+      line-height:1.8;
+    }
+
+    footer{
+      background:#081f36;
+      color:white;
+      text-align:center;
+      padding:25px;
+    }
+
+    @media(max-width:768px){
+      header{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .contact-hero h1{
+        font-size:36px;
+      }
+
+      .contact-box{
+        padding:30px 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>Contact Me</h1>
-        <p>Have a question or want to connect? Send me a message below!</p>
-    </header>
+
+<header>
+  <div class="logo">MISC Cleaning LLC</div>
+  <a href="index.html" class="home-btn">← Home</a>
+</header>
+
+<section class="contact-hero">
+  <h1>Contact Misc Cleaning</h1>
+  <p>Have a question or need cleaning services? Send us a message below.</p>
+</section>
+
+<section class="contact-section">
+  <div class="contact-box">
 
     <form action="https://formspree.io/f/xqapgvzj" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" name="name" id="name" required>
 
-        <label for="email">Your Email:</label>
-        <input type="email" name="email" id="email" required>
+      <input type="text" name="name" placeholder="Your Name" required>
 
-        <label for="message">Your Message:</label>
-        <textarea name="message" id="message" required></textarea>
+      <input type="email" name="email" placeholder="Your Email" required>
 
-        <button type="submit">Send Message</button>
+      <input type="tel" name="phone" placeholder="Phone Number">
+
+      <textarea name="message" placeholder="How can we help you?" required></textarea>
+
+      <button type="submit">Send Message</button>
+
     </form>
 
+    <div class="info">
+      <p><strong>Email:</strong> misccleaning@gmail.com</p>
+      <p><strong>Serving:</strong> Macomb County, Michigan</p>
+      <p>Women-Owned & Fully Insured</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 MISC Cleaning LLC — All Rights Reserved
+</footer>
+
 </body>
-
 </html>
-
-
