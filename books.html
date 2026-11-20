@@ -137,6 +137,37 @@
       line-height: 1.55;
     }
 
+    .book-card.new-release {
+      grid-column: 1 / -1;
+      border-color: #A4E10A;
+    }
+
+    .book-card.new-release img {
+      max-width: 340px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .book-card.new-release p {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .new-badge {
+      display: block;
+      width: fit-content;
+      background: linear-gradient(135deg, #A4E10A, #5fbf00);
+      color: #102000;
+      font-weight: bold;
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin: 0 auto 14px;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     .button {
       display: inline-block;
       margin: 8px;
@@ -212,6 +243,16 @@
 
   <main class="books-grid">
 
+    <div class="book-card new-release">
+      <span class="new-badge">New Release</span>
+      <img src="cover-little-brother.jpg" alt="Cover of Little Brother by Michael Schulwitz Jr.: two smiling brothers flex and jump on a bright blue background with colorful confetti">
+      <h2>Little Brother</h2>
+      <p>
+        He tickles. He copies. He jumps off the couch! Life with a little brother can be giggly, messy, and a little bit crazy. In this funny read-aloud poem, a big brother tells it like it is: the tickling, the copying, the trouble, and the tizzy. Michael Schulwitz Jr. wrote “Little Brother” about his own little brother, Mitchell, when he was in the 4th grade, and it won a poetry-writing competition.
+      </p>
+      <a href="https://www.amazon.com/dp/B0HPX4CRNV" class="button" target="_blank" rel="noopener">Buy on Amazon</a>
+    </div>
+
     <div class="book-card">
       <img src="rocco-cover.jpg" alt="Rocco's Spooky Adventure">
       <h2>Rocco’s Spooky Adventure</h2>
@@ -223,12 +264,12 @@
     </div>
 
     <div class="book-card">
-      <img src="cover-birdie.jpg" alt="Birdie Birdie in the Sky">
+      <img src="cover-birdie.jpg" alt="Cover of Birdie Birdie in the Sky by Michael Schulwitz Jr.: a smiling girl with curly hair reaches toward a yellow bird in a sunny meadow">
       <h2>Birdie Birdie in the Sky</h2>
       <p>
         A silly, fun rhyming story featuring a joyful girl and a plump yellow bird on a whimsical sky-high adventure.
       </p>
-      <a href="https://www.barnesandnoble.com/w/birdie-birdie-in-the-sky-michael-dwight-schulwitz/1147297250?ean=9798349259777" class="button" target="_blank">Buy on Barnes & Noble</a>
+      <a href="https://www.amazon.com/dp/B0HQBD368J" class="button" target="_blank" rel="noopener">Buy on Amazon (Hardcover &amp; Paperback)</a>
       <a href="#" class="button">Read Free Preview</a>
     </div>
 

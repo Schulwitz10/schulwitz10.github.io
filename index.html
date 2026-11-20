@@ -197,6 +197,37 @@
       line-height: 1.65;
     }
 
+    .book-card.new-release {
+      grid-column: 1 / -1;
+      border-color: #A4E10A;
+    }
+
+    .book-card.new-release img {
+      max-width: 320px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .book-card.new-release p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .new-badge {
+      display: block;
+      width: fit-content;
+      background: linear-gradient(to bottom, #c6ff2b, #79b800);
+      color: #222;
+      font-weight: bold;
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin: 0 auto 14px;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     .quest-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -343,6 +374,14 @@
 
     <div class="book-grid">
 
+      <div class="book-card new-release">
+        <span class="new-badge">New Release</span>
+        <img src="cover-little-brother.jpg" alt="Cover of Little Brother by Michael Schulwitz Jr.: two smiling brothers flex and jump on a bright blue background with colorful confetti">
+        <h3>Little Brother</h3>
+        <p>A funny read-aloud poem about a giggly, messy little brother who tickles, copies, and jumps off the couch.</p>
+        <a href="https://www.amazon.com/dp/B0HPX4CRNV" class="button" target="_blank" rel="noopener">Buy on Amazon</a>
+      </div>
+
       <div class="book-card">
         <img src="rocco-cover.jpg" alt="Rocco's Spooky Adventure Cover">
         <h3>Rocco’s Spooky Adventure</h3>
@@ -351,10 +390,10 @@
       </div>
 
       <div class="book-card">
-        <img src="cover-birdie.jpg" alt="Birdie Birdie in the Sky Cover">
+        <img src="cover-birdie.jpg" alt="Cover of Birdie Birdie in the Sky by Michael Schulwitz Jr.: a smiling girl with curly hair reaches toward a yellow bird in a sunny meadow">
         <h3>Birdie Birdie in the Sky</h3>
         <p>A silly, fun rhyming story featuring a joyful girl and a plump yellow bird on a whimsical sky-high adventure.</p>
-        <a href="https://www.barnesandnoble.com/w/birdie-birdie-in-the-sky-michael-dwight-schulwitz/1147297250?ean=9798349259777" class="button" target="_blank">Buy on Barnes & Noble</a>
+        <a href="https://www.amazon.com/dp/B0HQBD368J" class="button" target="_blank" rel="noopener">Buy on Amazon (Hardcover &amp; Paperback)</a>
       </div>
 
     </div>
